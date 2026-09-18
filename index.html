@@ -1,16 +1,19 @@
+Here is a complete, self-contained HTML document for a crochet booking website with a dark theme. You can copy and paste this code directly into an `.html` file and open it in any browser.
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crochet & Co. · Book Your Handmade Piece</title>
-  <!-- Font Awesome 6 (free) -->
+  <!-- Font Awesome 6 (free CDN) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Google Fonts: Playfair Display & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
   <style>
+    /* ----- RESET & BASE ----- */
     * {
       margin: 0;
       padding: 0;
@@ -27,6 +30,7 @@
       flex-direction: column;
       background-image: radial-gradient(circle at 20% 30%, rgba(90, 70, 50, 0.08) 0%, transparent 30%),
                         radial-gradient(circle at 80% 70%, rgba(140, 110, 80, 0.06) 0%, transparent 35%);
+      overflow-x: hidden;
     }
 
     /* subtle grain overlay */
@@ -475,7 +479,7 @@
       transform: scale(1.1);
     }
 
-    /* responsive */
+    /* ----- RESPONSIVE ----- */
     @media (max-width: 750px) {
       .page-wrapper { padding: 1.5rem; }
       .hero-text h2 { font-size: 2.5rem; }
@@ -503,12 +507,12 @@
 </head>
 <body>
   <div class="page-wrapper">
-    <!-- HEADER -->
+    <!-- ===== HEADER ===== -->
     <header class="header">
       <div class="logo">
         <i class="fas fa-yarn"></i>
         <div>
-          <h1>Crochet & Co.</h1>
+          <h1>Crochet &amp; Co.</h1>
           <span>handmade with intention</span>
         </div>
       </div>
@@ -520,7 +524,7 @@
       </nav>
     </header>
 
-    <!-- HERO -->
+    <!-- ===== HERO ===== -->
     <section class="hero">
       <div class="hero-text">
         <div class="badge"><i class="fas fa-hook" style="margin-right: 6px;"></i> custom orders open</div>
@@ -542,24 +546,21 @@
       </div>
     </section>
 
-    <!-- BOOKING SECTION (main form) -->
+    <!-- ===== BOOKING FORM ===== -->
     <section class="booking-section">
       <div class="section-title">
         <i class="fas fa-calendar-check"></i> book your crochet slot
       </div>
       <form id="bookingForm" onsubmit="event.preventDefault(); alert('✨ Thank you! Your crochet request has been received. I will reach out within 24h to confirm details. 🧶');">
         <div class="booking-grid">
-          <!-- Name -->
           <div class="input-group">
             <label><i class="fas fa-user"></i> Your name</label>
             <input type="text" placeholder="e.g. Maya Chen" required>
           </div>
-          <!-- Email -->
           <div class="input-group">
             <label><i class="fas fa-envelope"></i> Email</label>
             <input type="email" placeholder="hello@example.com" required>
           </div>
-          <!-- Item type -->
           <div class="input-group">
             <label><i class="fas fa-tshirt"></i> Item type</label>
             <select required>
@@ -572,23 +573,19 @@
               <option>Custom (describe below)</option>
             </select>
           </div>
-          <!-- Deadline -->
           <div class="input-group">
             <label><i class="fas fa-calendar-alt"></i> Preferred deadline</label>
             <input type="date" value="2026-10-15">
           </div>
-          <!-- Colour & yarn notes (full width) -->
           <div class="input-group full-width">
             <label><i class="fas fa-palette"></i> Colour / yarn preference</label>
             <input type="text" placeholder="e.g. sage green, cream, merino wool blend">
           </div>
-          <!-- Details / message -->
           <div class="input-group full-width">
-            <label><i class="fas fa-pencil-alt"></i> Extra details & inspiration</label>
+            <label><i class="fas fa-pencil-alt"></i> Extra details &amp; inspiration</label>
             <textarea rows="3" placeholder="Tell me about the size, stitch, or any special request..."></textarea>
           </div>
         </div>
-        <!-- actions -->
         <div class="booking-actions">
           <button type="submit" class="btn-primary">
             Request booking <i class="fas fa-arrow-right"></i>
@@ -600,7 +597,7 @@
       </form>
     </section>
 
-    <!-- INSPIRATION / CATEGORIES -->
+    <!-- ===== CATEGORIES / INSPIRATION ===== -->
     <section class="inspire-section">
       <div class="inspire-header">
         <h3>what I love to make</h3>
@@ -610,7 +607,7 @@
         <div class="category-card">
           <i class="fas fa-cat"></i>
           <h4>Amigurumi</h4>
-          <p>cute & cuddly</p>
+          <p>cute &amp; cuddly</p>
         </div>
         <div class="category-card">
           <i class="fas fa-blanket"></i>
@@ -620,24 +617,24 @@
         <div class="category-card">
           <i class="fas fa-vest"></i>
           <h4>Wearables</h4>
-          <p>cardigans & tops</p>
+          <p>cardigans &amp; tops</p>
         </div>
         <div class="category-card">
           <i class="fas fa-shopping-bag"></i>
           <h4>Bags</h4>
-          <p>market & totes</p>
+          <p>market &amp; totes</p>
         </div>
         <div class="category-card">
           <i class="fas fa-hat-cowboy"></i>
           <h4>Hats</h4>
-          <p>beanies & berets</p>
+          <p>beanies &amp; berets</p>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-      <div>© 2026 Crochet & Co. — slow craft, tiny loops.</div>
+      <div>© 2026 Crochet &amp; Co. — slow craft, tiny loops.</div>
       <div class="footer-social">
         <i class="fab fa-instagram"></i>
         <i class="fab fa-ravelry"></i>
@@ -647,15 +644,15 @@
     </footer>
   </div>
 
-  <!-- tiny script to keep the date field nice (optional) -->
+  <!-- ===== SCRIPTS ===== -->
   <script>
     (function() {
-      // set minimum date to today for the date input
+      // Set minimum date to today for the date input
       const dateInput = document.querySelector('input[type="date"]');
       if (dateInput) {
         const today = new Date().toISOString().split('T')[0];
         dateInput.setAttribute('min', today);
-        // if the pre-filled value is in the past, set to a future date
+        // If the pre-filled value is in the past, set to a future date
         if (dateInput.value < today) {
           dateInput.value = '2026-10-15';
         }
